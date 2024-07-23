@@ -12,6 +12,7 @@ using Soenneker.Instantly.Unibox.Requests;
 using Soenneker.Instantly.Unibox.Responses;
 using Soenneker.Extensions.Enumerable;
 using Soenneker.Extensions.Object;
+using Soenneker.Instantly.Client;
 
 namespace Soenneker.Instantly.Unibox;
 
@@ -20,7 +21,6 @@ public class InstantlyUniboxUtil : IInstantlyUniboxUtil
 {
     private readonly IInstantlyClient _instantlyClient;
     private readonly ILogger<InstantlyUniboxUtil> _logger;
-    private const string _baseUrl = "https://api.instantly.ai/api/v1/";
 
     private readonly string _apiKey;
     private readonly bool _log;
@@ -44,7 +44,7 @@ public class InstantlyUniboxUtil : IInstantlyUniboxUtil
 
         HttpClient client = await _instantlyClient.Get(cancellationToken).NoSync();
 
-        string uri = _baseUrl + "unibox/emails" + request.ToQueryString();
+        string uri = InstantlyClient.BaseUri + "unibox/emails" + request.ToQueryString();
 
         InstantlyEmailResponse? response = await client.SendWithRetryToType<InstantlyEmailResponse>(HttpMethod.Get, uri, request, cancellationToken: cancellationToken).NoSync();
 
