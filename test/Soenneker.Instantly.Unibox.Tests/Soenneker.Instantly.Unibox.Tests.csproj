@@ -32,7 +32,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\src\Soenneker.Instantly.Unibox.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.Instantly.Unibox.csproj" />
     </ItemGroup>
 
 </Project>
