@@ -42,7 +42,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Soenneker.Extensions.Configuration" Version="2.1.444" />
+        <PackageReference Include="Soenneker.Extensions.Configuration" Version="2.1.445" />
         <PackageReference Include="Soenneker.Extensions.Enumerable.String" Version="2.1.519" />
         <PackageReference Include="Soenneker.Extensions.HttpClient" Version="2.1.1358" />
         <PackageReference Include="Ardalis.SmartEnum.SystemTextJson" Version="8.0.0" />
