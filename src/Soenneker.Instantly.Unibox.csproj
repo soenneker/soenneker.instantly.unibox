@@ -45,6 +45,6 @@
         <PackageReference Include="Soenneker.Extensions.Configuration" Version="2.1.479" />
         <PackageReference Include="Soenneker.Extensions.HttpClient" Version="2.1.1680" />
         <PackageReference Include="Ardalis.SmartEnum.SystemTextJson" Version="8.1.0" />
-        <PackageReference Include="Soenneker.Instantly.Client" Version="2.1.759" />
+        <PackageReference Include="Soenneker.Instantly.Client" Version="2.1.761" />
     </ItemGroup>
 </Project>
