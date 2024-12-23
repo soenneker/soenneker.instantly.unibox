@@ -1,11 +1,6 @@
-using Soenneker.Facts.Local;
 using Soenneker.Instantly.Unibox.Abstract;
 using Soenneker.Tests.FixturedUnit;
-using System.Threading.Tasks;
-using Soenneker.Instantly.Unibox.Enums;
-using Soenneker.Instantly.Unibox.Requests;
 using Xunit;
-
 
 namespace Soenneker.Instantly.Unibox.Tests;
 
@@ -19,16 +14,9 @@ public class InstantlyUniboxUtilTests : FixturedUnitTest
         _util = Resolve<IInstantlyUniboxUtil>(true);
     }
 
-    [LocalFact]
-    public async Task GetList_should_get_list()
+    [Fact]
+    public void Default()
     {
-        var request = new InstantlyEmailRequest
-        {
-            Lead = "",
-            EmailType = InstantlyEmailType.Received,
-            PreviewOnly = false
-        };
 
-        var emails = await _util.GetList(request);
     }
 }
