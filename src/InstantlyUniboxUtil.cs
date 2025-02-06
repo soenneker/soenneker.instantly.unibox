@@ -45,8 +45,6 @@ public class InstantlyUniboxUtil : IInstantlyUniboxUtil
 
         string uri = "unibox/emails" + request.ToQueryString();
 
-        InstantlyEmailResponse? response = await client.SendWithRetryToType<InstantlyEmailResponse>(HttpMethod.Get, uri, request, cancellationToken: cancellationToken).NoSync();
-
-        return response;
+        return await client.SendWithRetryToType<InstantlyEmailResponse>(HttpMethod.Get, uri, request, cancellationToken: cancellationToken).NoSync();
     }
 }

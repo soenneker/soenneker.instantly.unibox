@@ -13,18 +13,22 @@ public static class InstantlyUniboxUtilRegistrar
     /// <summary>
     /// Adds <see cref="IInstantlyUniboxUtil"/> as a singleton service. <para/>
     /// </summary>
-    public static void AddInstantlyUniboxUtilAsSingleton(this IServiceCollection services)
+    public static IServiceCollection AddInstantlyUniboxUtilAsSingleton(this IServiceCollection services)
     {
-        services.AddInstantlyClientAsSingleton();
-        services.TryAddSingleton<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+        services.AddInstantlyClientAsSingleton()
+                .TryAddSingleton<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+
+        return services;
     }
 
     /// <summary>
     /// Adds <see cref="IInstantlyUniboxUtil"/> as a scoped service. <para/>
     /// </summary>
-    public static void AddInstantlyUniboxUtilAsScoped(this IServiceCollection services)
+    public static IServiceCollection AddInstantlyUniboxUtilAsScoped(this IServiceCollection services)
     {
-        services.AddInstantlyClientAsScoped();
-        services.TryAddScoped<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+        services.AddInstantlyClientAsScoped()
+                .TryAddScoped<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+
+        return services;
     }
 }
