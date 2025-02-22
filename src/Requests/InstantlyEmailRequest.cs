@@ -1,5 +1,4 @@
-﻿using Ardalis.SmartEnum.SystemTextJson;
-using Soenneker.Instantly.Unibox.Enums;
+﻿using Soenneker.Instantly.Unibox.Enums;
 using System.Text.Json.Serialization;
 
 namespace Soenneker.Instantly.Unibox.Requests;
@@ -40,7 +39,6 @@ public class InstantlyEmailRequest
     /// Email type
     /// </summary>
     [JsonPropertyName("email_type")]
-    [JsonConverter(typeof(SmartEnumNameConverter<InstantlyEmailType, int>))]
     public InstantlyEmailType? EmailType { get; set; }
 
     /// <summary>
