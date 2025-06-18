@@ -1,16 +1,10 @@
-﻿using Soenneker.Instantly.Unibox.Enums;
+﻿using Soenneker.Instantly.OpenApiClient.Api.V2.Emails;
 using System.Text.Json.Serialization;
 
 namespace Soenneker.Instantly.Unibox.Requests;
 
-public class InstantlyEmailRequest
+public sealed class InstantlyEmailRequest
 {
-    /// <summary>
-    /// Your API Key
-    /// </summary>
-    [JsonPropertyName("api_key")]
-    public string ApiKey { get; set; } = default!;
-
     /// <summary>
     /// Set to false if you only want the email content's preview and not the full body
     /// </summary>
@@ -39,7 +33,7 @@ public class InstantlyEmailRequest
     /// Email type
     /// </summary>
     [JsonPropertyName("email_type")]
-    public InstantlyEmailType? EmailType { get; set; }
+    public GetEmail_typeQueryParameterType? EmailType { get; set; }
 
     /// <summary>
     /// Set to true if you want to only fetch the latest email per thread

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Soenneker.Instantly.Client.Registrars;
+using Soenneker.Instantly.ClientUtil.Registrars;
 using Soenneker.Instantly.Unibox.Abstract;
 
 namespace Soenneker.Instantly.Unibox.Registrars;
@@ -15,7 +15,7 @@ public static class InstantlyUniboxUtilRegistrar
     /// </summary>
     public static IServiceCollection AddInstantlyUniboxUtilAsSingleton(this IServiceCollection services)
     {
-        services.AddInstantlyClientAsSingleton()
+        services.AddInstantlyOpenApiClientUtilAsSingleton()
                 .TryAddSingleton<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
 
         return services;
@@ -26,7 +26,7 @@ public static class InstantlyUniboxUtilRegistrar
     /// </summary>
     public static IServiceCollection AddInstantlyUniboxUtilAsScoped(this IServiceCollection services)
     {
-        services.AddInstantlyClientAsScoped()
+        services.AddInstantlyOpenApiClientUtilAsSingleton()
                 .TryAddScoped<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
 
         return services;

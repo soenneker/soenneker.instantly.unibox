@@ -1,7 +1,8 @@
+using Soenneker.Instantly.OpenApiClient.Models;
 using Soenneker.Instantly.Unibox.Requests;
-using Soenneker.Instantly.Unibox.Responses;
-using System.Threading.Tasks;
+using System.Collections.Generic;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace Soenneker.Instantly.Unibox.Abstract;
 
@@ -10,5 +11,5 @@ namespace Soenneker.Instantly.Unibox.Abstract;
 /// </summary>
 public interface IInstantlyUniboxUtil
 {
-    ValueTask<InstantlyEmailResponse?> GetList(InstantlyEmailRequest request, CancellationToken cancellationToken = default);
+    ValueTask<List<Def2>?> GetList(InstantlyEmailRequest request, CancellationToken cancellationToken = default);
 }
