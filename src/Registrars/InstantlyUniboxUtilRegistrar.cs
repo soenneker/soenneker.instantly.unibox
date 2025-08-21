@@ -15,8 +15,7 @@ public static class InstantlyUniboxUtilRegistrar
     /// </summary>
     public static IServiceCollection AddInstantlyUniboxUtilAsSingleton(this IServiceCollection services)
     {
-        services.AddInstantlyOpenApiClientUtilAsSingleton()
-                .TryAddSingleton<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+        services.AddInstantlyOpenApiClientUtilAsSingleton().TryAddSingleton<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
 
         return services;
     }
@@ -26,8 +25,7 @@ public static class InstantlyUniboxUtilRegistrar
     /// </summary>
     public static IServiceCollection AddInstantlyUniboxUtilAsScoped(this IServiceCollection services)
     {
-        services.AddInstantlyOpenApiClientUtilAsSingleton()
-                .TryAddScoped<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
+        services.AddInstantlyOpenApiClientUtilAsSingleton().TryAddScoped<IInstantlyUniboxUtil, InstantlyUniboxUtil>();
 
         return services;
     }
