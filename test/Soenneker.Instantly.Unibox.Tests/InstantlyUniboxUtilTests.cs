@@ -1,20 +1,19 @@
 using Soenneker.Instantly.Unibox.Abstract;
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Instantly.Unibox.Tests;
 
-[Collection("Collection")]
-public class InstantlyUniboxUtilTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public class InstantlyUniboxUtilTests : HostedUnitTest
 {
     private readonly IInstantlyUniboxUtil _util;
 
-    public InstantlyUniboxUtilTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public InstantlyUniboxUtilTests(Host host) : base(host)
     {
         _util = Resolve<IInstantlyUniboxUtil>(true);
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
