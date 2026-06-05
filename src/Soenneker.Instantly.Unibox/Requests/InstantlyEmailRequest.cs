@@ -3,6 +3,9 @@ using System.Text.Json.Serialization;
 
 namespace Soenneker.Instantly.Unibox.Requests;
 
+/// <summary>
+/// Represents the instantly email request.
+/// </summary>
 public sealed class InstantlyEmailRequest
 {
     /// <summary>

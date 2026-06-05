@@ -11,5 +11,11 @@ namespace Soenneker.Instantly.Unibox.Abstract;
 /// </summary>
 public interface IInstantlyUniboxUtil
 {
+    /// <summary>
+    /// Gets list.
+    /// </summary>
+    /// <param name="request">The request.</param>
+    /// <param name="cancellationToken">The cancellation token.</param>
+    /// <returns>A task containing the result of the operation.</returns>
     ValueTask<List<Def2>?> GetList(InstantlyEmailRequest request, CancellationToken cancellationToken = default);
 }
