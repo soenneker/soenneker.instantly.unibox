@@ -1,4 +1,4 @@
-﻿using Soenneker.Instantly.OpenApiClient.Api.V2.Emails;
+﻿using Soenneker.Instantly.OpenApiClient.Models;
 using System.Text.Json.Serialization;
 using Soenneker.Instantly.OpenApiClient.Models;
 
