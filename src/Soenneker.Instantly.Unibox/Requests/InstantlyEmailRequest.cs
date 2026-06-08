@@ -1,5 +1,6 @@
 ﻿using Soenneker.Instantly.OpenApiClient.Api.V2.Emails;
 using System.Text.Json.Serialization;
+using Soenneker.Instantly.OpenApiClient.Models;
 
 namespace Soenneker.Instantly.Unibox.Requests;
 
@@ -36,7 +37,7 @@ public sealed class InstantlyEmailRequest
     /// Email type
     /// </summary>
     [JsonPropertyName("email_type")]
-    public GetEmail_typeQueryParameterType? EmailType { get; set; }
+    public ListEmailEmailTypeParameter? EmailType { get; set; }
 
     /// <summary>
     /// Set to true if you want to only fetch the latest email per thread
