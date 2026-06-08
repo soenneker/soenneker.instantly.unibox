@@ -39,7 +39,7 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
 
         InstantlyOpenApiClient client = await _instantlyClient.Get(cancellationToken).NoSync();
 
-        EmailsGetResponse? response = await client.Api.V2.Emails.GetAsync(config =>
+        ListEmail200Response? response = await client.Api.V2.Emails.GetAsync(config =>
         {
             if (request.CampaignId.Populated())
                 config.QueryParameters.CampaignId = Guid.Parse(request.CampaignId);
