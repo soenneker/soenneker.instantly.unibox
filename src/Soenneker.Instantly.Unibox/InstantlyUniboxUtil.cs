@@ -24,7 +24,8 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
 
     private readonly bool _log;
 
-    public InstantlyUniboxUtil(IInstantlyOpenApiClientUtil instantlyClient, ILogger<InstantlyUniboxUtil> logger, IConfiguration config)
+    public InstantlyUniboxUtil(IInstantlyOpenApiClientUtil instantlyClient, ILogger<InstantlyUniboxUtil> logger,
+        IConfiguration config)
     {
         _instantlyClient = instantlyClient;
         _logger = logger;
@@ -32,10 +33,12 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
         _log = config.GetValue<bool>("Instantly:LogEnabled");
     }
 
-    public async ValueTask<List<Def2>?> GetList(InstantlyEmailRequest request, CancellationToken cancellationToken = default)
+    public async ValueTask<List<Email>?> GetList(InstantlyEmailRequest request,
+        CancellationToken cancellationToken = default)
     {
         if (_log && request.CampaignId.Populated())
-            _logger.LogDebug("Getting emails from Instantly... Campaign: {campaign}, Lead: {lead}", request.CampaignId, request.Lead);
+            _logger.LogDebug("Getting emails from Instantly... Campaign: {campaign}, Lead: {lead}", request.CampaignId,
+                request.Lead);
 
         InstantlyOpenApiClient client = await _instantlyClient.Get(cancellationToken).NoSync();
 
@@ -61,6 +64,5 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
             return null;
 
         return response.Items;
-
     }
 }

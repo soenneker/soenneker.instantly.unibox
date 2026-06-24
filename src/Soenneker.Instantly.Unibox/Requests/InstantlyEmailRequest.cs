@@ -1,6 +1,5 @@
 ﻿using Soenneker.Instantly.OpenApiClient.Models;
 using System.Text.Json.Serialization;
-using Soenneker.Instantly.OpenApiClient.Models;
 
 namespace Soenneker.Instantly.Unibox.Requests;
 
