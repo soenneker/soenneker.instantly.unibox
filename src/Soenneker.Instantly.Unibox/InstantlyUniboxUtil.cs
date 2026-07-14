@@ -45,7 +45,7 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
         ListEmail200Response? response = await client.Api.V2.Emails.GetAsync(config =>
         {
             if (request.CampaignId.Populated())
-                config.QueryParameters.CampaignId = Guid.Parse(request.CampaignId);
+                config.QueryParameters.CampaignId = request.CampaignId;
 
             if (request.Lead.Populated())
                 config.QueryParameters.Lead = request.Lead;
