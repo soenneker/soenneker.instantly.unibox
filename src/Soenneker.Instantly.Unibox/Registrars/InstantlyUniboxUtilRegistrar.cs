@@ -6,7 +6,7 @@ using Soenneker.Instantly.Unibox.Abstract;
 namespace Soenneker.Instantly.Unibox.Registrars;
 
 /// <summary>
-/// A .NET typesafe implementation of Instantly's Unibox API
+/// Registers filtered Instantly Unibox email retrieval.
 /// </summary>
 public static class InstantlyUniboxUtilRegistrar
 {

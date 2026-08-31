@@ -9,7 +9,7 @@ namespace Soenneker.Instantly.Unibox.Requests;
 public sealed class InstantlyEmailRequest
 {
     /// <summary>
-    /// Set to false if you only want the email content's preview and not the full body
+    /// Set to true to return only the email content preview instead of the full body.
     /// </summary>
     [JsonPropertyName("preview_only")]
     public bool? PreviewOnly { get; set; }
@@ -27,7 +27,7 @@ public sealed class InstantlyEmailRequest
     public string? CampaignId { get; set; }
 
     /// <summary>
-    /// Set to true if you only want to fetch sent emails
+    /// Set to true to fetch only sent emails when <see cref="EmailType"/> is not specified.
     /// </summary>
     [JsonPropertyName("sent_emails")]
     public bool? SentEmails { get; set; }
@@ -39,7 +39,7 @@ public sealed class InstantlyEmailRequest
     public ListEmailEmailTypeParameter? EmailType { get; set; }
 
     /// <summary>
-    /// Set to true if you want to only fetch the latest email per thread
+    /// Set to true to fetch only the latest email in each thread.
     /// </summary>
     [JsonPropertyName("latest_of_thread")]
     public bool? LatestOfThread { get; set; }

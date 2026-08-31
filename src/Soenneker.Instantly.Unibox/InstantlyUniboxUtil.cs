@@ -16,7 +16,6 @@ using Soenneker.Extensions.Task;
 
 namespace Soenneker.Instantly.Unibox;
 
-/// <inheritdoc cref="IInstantlyUniboxUtil"/>
 public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
 {
     private readonly IInstantlyOpenApiClientUtil _instantlyClient;
@@ -55,6 +54,11 @@ public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
 
             if (request.EmailType != null)
                 config.QueryParameters.EmailType = request.EmailType.Value;
+            else if (request.SentEmails == true)
+                config.QueryParameters.EmailType = ListEmailEmailTypeParameter.Sent;
+
+            if (request.LatestOfThread.HasValue)
+                config.QueryParameters.LatestOfThread = request.LatestOfThread.Value;
 
             if (request.PageTrail.Populated())
                 config.QueryParameters.StartingAfter = request.PageTrail;

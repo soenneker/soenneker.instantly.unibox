@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A .NET typesafe implementation of Instantly's Unibox API</Description>
+        <Description>Lists Instantly Unibox emails using lead, campaign, type, preview, thread, and cursor filters</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Instantly.Unibox</AssemblyName>
