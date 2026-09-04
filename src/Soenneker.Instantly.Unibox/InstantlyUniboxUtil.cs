@@ -16,6 +16,7 @@ using Soenneker.Extensions.Task;
 
 namespace Soenneker.Instantly.Unibox;
 
+/// <inheritdoc cref="IInstantlyUniboxUtil" />
 public sealed class InstantlyUniboxUtil : IInstantlyUniboxUtil
 {
     private readonly IInstantlyOpenApiClientUtil _instantlyClient;
